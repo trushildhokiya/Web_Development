@@ -20,11 +20,20 @@ h3{
     font-family: "Montserrat";
     font-weight: bold;
 }
+h2{
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.5;
+}
 
 p{
     color: #8f8f8f;
 }
 
+em{
+    margin-left: 10px;
+}
 /* Navbar  */
 
 .navbar{
@@ -73,4 +82,38 @@ p{
 
 .featured-icon:hover{
     color:#ff4c68
+}
+
+/* testimonials section */
+#testimonials{
+    background-color: #ef8172;
+    color: white;
+    text-align: center;
+}
+
+.testimonial-img{
+    width: 10%;
+    border-radius: 100%;
+}
+
+.testimonial-text{
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-size:2rem;
+    color: white;
+}
+
+.carousel-item{
+    padding: 7% 15%;
+}
+/* press section  */
+#press{
+    background-color: #ef8172;
+    padding: 3%;
+    text-align: center;
+}
+
+.press-logo{
+    width:15%;
+    margin: 20px 50px 20px;
 }
