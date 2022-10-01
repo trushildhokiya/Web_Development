@@ -117,3 +117,13 @@ em{
     width:15%;
     margin: 20px 50px 20px;
 }
+
+/* Pricing Section  */
+#pricing{
+    padding: 10%;
+    text-align: center;
+}
+
+.pricing-column{
+    padding: 3% 2%;
+}
