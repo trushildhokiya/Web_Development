@@ -127,4 +127,46 @@ em{
 .pricing-column{
     padding: 3% 2%;
 }
-/* this is not a comment */
+
+/* media query */
+@media (max-width:1028px){
+    #title{
+        text-align: center;
+    }
+}
+
+/* call to action section  */
+#cta{
+    background-color: #ff4c68;
+    padding: 7% 10%;
+    text-align: center;
+}
+
+.cta-h3{
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+    padding: 1% 0% 7%;
+}
+
+.btn-cta{
+    margin: 0% 1% ;
+}
+
+/* footer section  */
+#footer{
+    text-align: center;
+    background-color: white;
+    padding:7%;
+}
+
+.social-media{
+    padding: 1%;
+}
+
+.brand-icons{
+    margin: 0% 1%;
+    color: black;
+    text-decoration: none;
+}
