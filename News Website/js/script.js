@@ -1,8 +1,5 @@
-
-
-// variables
-const businessBtn = document.getElementById("business");
-const sportsBtn = document.getElementById("sports");
+const BBTN = document.getElementById("business");
+const SBTN = document.getElementById("sports");
 const entertainmentBtn = document.getElementById("Entertainment");
 const technologyBtn = document.getElementById("Technology");
 const searchBtn = document.getElementById("search-btn");
@@ -11,10 +8,8 @@ const newsQuery = document.getElementById("newsQuery");
 const newsType = document.getElementById("newsType");
 const newsdetails = document.getElementById("newsdetails");
 
-// Array
 var newsDataArr = [];
 
-// apis 
 const API_KEY = "240983b98f9049beba40c7072604770f";
 const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=in&apiKey=";
 const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=";
@@ -30,12 +25,12 @@ window.onload = function() {
 };
 
 
-businessBtn.addEventListener("click",function(){
+BBTN.addEventListener("click",function(){
     newsType.innerHTML="<h4>Business</h4>";
     fetchBusinessNews();
 });
 
-sportsBtn.addEventListener("click",function(){
+SBTN.addEventListener("click",function(){
     newsType.innerHTML="<h4>Sports</h4>";
     fetchSportsNews();
 });
