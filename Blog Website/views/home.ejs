@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+<p><%=home_text%></p>
+
+<% allPosts.forEach(function(feeds){ %>
+    <h1>
+        <%= feeds.title%>
+    </h1>
+    <p>
+        <%=feeds.content%>
+    </p>
+<% })                                %>
+
+<%-include("partials/footer");-%>
