@@ -2,6 +2,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import ejs from "ejs";
+import lodash from "lodash"
 
 //creating constant texts
 const content_1 = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla nobis hic harum reprehenderit itaque saepe molestiae eaque ad! Vel ea, laboriosam possimus ipsum magnam vitae quae commodi. Fugit, fuga quibusdam! Asperiores, aspernatur debitis quos nobis saepe unde. Magni unde animi quae a ad. Unde, obcaecati?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis, assumenda hic. Adipisci illo ex sed dolore exercitationem autem praesentium qui id odit, iste eaque sequi suscipit repellendus quasi enim est, aut cum blanditiis tempore eius recusandae quis magni? Quibusdam animi vitae sit obcaecati autem tenetur consequuntur nostrum atque, sunt alias, non est corrupti molestias doloribus. Inventore iusto, reprehenderit saepe nobis et cum nostrum quo velit, qui illum ullam aut delectus nulla facilis fuga totam illo deleniti repellat assumenda aliquid porro blanditiis. Necessitatibus at voluptatem nam, veniam, minus officiis tenetur veritatis placeat consequatur voluptatum dolor amet esse. Quos id beatae praesentium." ;
@@ -16,6 +17,9 @@ let posts=[];
 
 // creating app
 const app= express();
+
+//using lodash
+const _= lodash();
 
 //acquiring body parser
 app.use(bodyParser.urlencoded({extended:true}));
@@ -50,6 +54,17 @@ app.get("/compose",function(req,res){
     res.render("compose");
 })
 
+//creating express routing 
+app.get("/posts/:title",function(req,res){
+    const requestedTitle= req.params.title;
+    posts.forEach(function(feeds){
+        if(_.lowerCase(feeds.title)==_.lowerCase(requestedTitle)){
+            
+            res.render("post",{post_title:feeds.title,post_content:feeds.content})
+        }
+    })
+})
+
 //handling post request from compose page
 
 app.post("/compose",function(req,res){
@@ -60,6 +75,7 @@ app.post("/compose",function(req,res){
     posts.push(post);
     res.redirect("/");
 })
+
 //start app at port 3000
 app.listen(3000,function(){
     console.log("Server started runnig at port 3000");

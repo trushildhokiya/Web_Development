@@ -7,7 +7,8 @@
         <%= feeds.title%>
     </h1>
     <p>
-        <%=feeds.content%>
+        <%=feeds.content.substring(0,100) +"..." %>
+        <a href="/posts/<%=feeds.title%>">Read more</a>
     </p>
 <% })                                %>
 
